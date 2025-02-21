@@ -17,12 +17,11 @@ pipeline {
 
                 # TODO fill out the path to conda here
                 # sudo /PATH/TO/CONDA init
-                source /opt/miniconda3/etc/profile.d/conda.sh
-                conda activate mlip
+                sudo /opt/miniconda3/condabin/conda init
 
                 # TODO Complete the command to run pytest
                 # sudo /PATH/TO/CONDA run -n <Envinronment Name> <Command you want to run>
-                pytest
+                sudo /opt/miniconda3/condabin/conda run -n mlip pytest --maxfail=1 --disable-warnings --tb=short
 
                 # echo 'pytest not runned'
                 # exit 1 #comment this line after implementing Jenkinsfile
